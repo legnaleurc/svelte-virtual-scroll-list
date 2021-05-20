@@ -1161,7 +1161,7 @@ const get_default_slot_context = ctx => ({ data: /*data*/ ctx[2] });
 const get_header_slot_changes = dirty => ({ data: dirty[0] & /*displayItems*/ 8 });
 const get_header_slot_context = ctx => ({ data: /*data*/ ctx[2] });
 
-// (195:4) {#if $$slots.header}
+// (199:4) {#if $$slots.header}
 function create_if_block_1(ctx) {
 	let item;
 	let current;
@@ -1188,7 +1188,7 @@ function create_if_block_1(ctx) {
 		p(ctx, dirty) {
 			const item_changes = {};
 
-			if (dirty[0] & /*$$scope, displayItems*/ 1073741832) {
+			if (dirty[0] & /*$$scope, displayItems*/ 536870920) {
 				item_changes.$$scope = { dirty, ctx };
 			}
 
@@ -1209,11 +1209,11 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (196:8) <Item on:resize={onItemResized} type="slot" uniqueKey="header">
+// (200:8) <Item on:resize={onItemResized} type="slot" uniqueKey="header">
 function create_default_slot_2(ctx) {
 	let current;
 	const header_slot_template = /*#slots*/ ctx[26].header;
-	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[30], get_header_slot_context);
+	const header_slot = create_slot(header_slot_template, ctx, /*$$scope*/ ctx[29], get_header_slot_context);
 
 	return {
 		c() {
@@ -1228,8 +1228,8 @@ function create_default_slot_2(ctx) {
 		},
 		p(ctx, dirty) {
 			if (header_slot) {
-				if (header_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 1073741832)) {
-					update_slot(header_slot, header_slot_template, ctx, /*$$scope*/ ctx[30], dirty, get_header_slot_changes, get_header_slot_context);
+				if (header_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 536870920)) {
+					update_slot(header_slot, header_slot_template, ctx, /*$$scope*/ ctx[29], dirty, get_header_slot_changes, get_header_slot_context);
 				}
 			}
 		},
@@ -1248,12 +1248,12 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (202:12) <Item                     on:resize={(e) => onItemResized(e.detail)}                     uniqueKey={data[key]}                     horizontal={isHorizontal}                     type="item">
+// (206:12) <Item                     on:resize={onItemResized}                     uniqueKey={data[key]}                     horizontal={isHorizontal}                     type="item">
 function create_default_slot_1(ctx) {
 	let t;
 	let current;
 	const default_slot_template = /*#slots*/ ctx[26].default;
-	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[30], get_default_slot_context);
+	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[29], get_default_slot_context);
 
 	return {
 		c() {
@@ -1270,8 +1270,8 @@ function create_default_slot_1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (default_slot) {
-				if (default_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 1073741832)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[30], dirty, get_default_slot_changes, get_default_slot_context);
+				if (default_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 536870920)) {
+					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[29], dirty, get_default_slot_changes, get_default_slot_context);
 				}
 			}
 		},
@@ -1291,7 +1291,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (201:8) {#each displayItems as data (data[key])}
+// (205:8) {#each displayItems as data (data[key])}
 function create_each_block$3(key_2, ctx) {
 	let first;
 	let item;
@@ -1307,7 +1307,7 @@ function create_each_block$3(key_2, ctx) {
 			}
 		});
 
-	item.$on("resize", /*resize_handler*/ ctx[27]);
+	item.$on("resize", /*onItemResized*/ ctx[7]);
 
 	return {
 		key: key_2,
@@ -1328,7 +1328,7 @@ function create_each_block$3(key_2, ctx) {
 			if (dirty[0] & /*displayItems, key*/ 9) item_changes.uniqueKey = /*data*/ ctx[2][/*key*/ ctx[0]];
 			if (dirty[0] & /*isHorizontal*/ 2) item_changes.horizontal = /*isHorizontal*/ ctx[1];
 
-			if (dirty[0] & /*$$scope, displayItems*/ 1073741832) {
+			if (dirty[0] & /*$$scope, displayItems*/ 536870920) {
 				item_changes.$$scope = { dirty, ctx };
 			}
 
@@ -1350,7 +1350,7 @@ function create_each_block$3(key_2, ctx) {
 	};
 }
 
-// (211:4) {#if $$slots.footer}
+// (215:4) {#if $$slots.footer}
 function create_if_block(ctx) {
 	let item;
 	let current;
@@ -1377,7 +1377,7 @@ function create_if_block(ctx) {
 		p(ctx, dirty) {
 			const item_changes = {};
 
-			if (dirty[0] & /*$$scope, displayItems*/ 1073741832) {
+			if (dirty[0] & /*$$scope, displayItems*/ 536870920) {
 				item_changes.$$scope = { dirty, ctx };
 			}
 
@@ -1398,11 +1398,11 @@ function create_if_block(ctx) {
 	};
 }
 
-// (212:8) <Item on:resize={onItemResized} type="slot" uniqueKey="footer">
+// (216:8) <Item on:resize={onItemResized} type="slot" uniqueKey="footer">
 function create_default_slot$5(ctx) {
 	let current;
 	const footer_slot_template = /*#slots*/ ctx[26].footer;
-	const footer_slot = create_slot(footer_slot_template, ctx, /*$$scope*/ ctx[30], get_footer_slot_context);
+	const footer_slot = create_slot(footer_slot_template, ctx, /*$$scope*/ ctx[29], get_footer_slot_context);
 
 	return {
 		c() {
@@ -1417,8 +1417,8 @@ function create_default_slot$5(ctx) {
 		},
 		p(ctx, dirty) {
 			if (footer_slot) {
-				if (footer_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 1073741832)) {
-					update_slot(footer_slot, footer_slot_template, ctx, /*$$scope*/ ctx[30], dirty, get_footer_slot_changes, get_footer_slot_context);
+				if (footer_slot.p && (!current || dirty[0] & /*$$scope, displayItems*/ 536870920)) {
+					update_slot(footer_slot, footer_slot_template, ctx, /*$$scope*/ ctx[29], dirty, get_footer_slot_changes, get_footer_slot_context);
 				}
 			}
 		},
@@ -1497,8 +1497,8 @@ function create_fragment$7(ctx) {
 			if (if_block1) if_block1.m(div2, null);
 			append(div2, t2);
 			append(div2, div1);
-			/*div1_binding*/ ctx[28](div1);
-			/*div2_binding*/ ctx[29](div2);
+			/*div1_binding*/ ctx[27](div1);
+			/*div2_binding*/ ctx[28](div2);
 			current = true;
 
 			if (!mounted) {
@@ -1530,7 +1530,7 @@ function create_fragment$7(ctx) {
 				check_outros();
 			}
 
-			if (dirty[0] & /*displayItems, key, isHorizontal, onItemResized, $$scope*/ 1073741963) {
+			if (dirty[0] & /*displayItems, key, isHorizontal, onItemResized, $$scope*/ 536871051) {
 				each_value = /*displayItems*/ ctx[3];
 				group_outros();
 				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, div0, outro_and_destroy_block, create_each_block$3, null, get_each_context$3);
@@ -1602,8 +1602,8 @@ function create_fragment$7(ctx) {
 			}
 
 			if (if_block1) if_block1.d();
-			/*div1_binding*/ ctx[28](null);
-			/*div2_binding*/ ctx[29](null);
+			/*div1_binding*/ ctx[27](null);
+			/*div2_binding*/ ctx[28](null);
 			mounted = false;
 			dispose();
 		}
@@ -1753,8 +1753,10 @@ function instance$7($$self, $$props, $$invalidate) {
 		return data.map(dataSource => dataSource[key]);
 	}
 
-	function onItemResized({ id, size, type }) {
-		if (type === "item") virtual.saveSize(id, size); else {
+	function onItemResized(event) {
+		const { id, size, type } = event.detail;
+
+		if (type === "item") virtual.saveSize(id, size); else if (type === "slot") {
 			if (id === "header") virtual.updateParam("slotHeaderSize", size); else if (id === "footer") virtual.updateParam("slotFooterSize", size);
 			virtual.handleSlotSizeChange();
 		}
@@ -1794,12 +1796,15 @@ function instance$7($$self, $$props, $$invalidate) {
 		}
 	}
 
-	async function handleDataSourcesChange(dataSources) {
+	function handleKeepsChange(keeps) {
+		virtual.updateParam("keeps", keeps);
+		virtual.handleSlotSizeChange();
+	}
+
+	async function handleDataSourcesChange(data) {
 		virtual.updateParam("uniqueIds", getUniqueIdFromDataSources());
 		virtual.handleDataSourcesChange();
 	}
-
-	const resize_handler = e => onItemResized(e.detail);
 
 	function div1_binding($$value) {
 		binding_callbacks[$$value ? "unshift" : "push"](() => {
@@ -1826,7 +1831,7 @@ function instance$7($$self, $$props, $$invalidate) {
 		if ("pageMode" in $$props) $$invalidate(14, pageMode = $$props.pageMode);
 		if ("topThreshold" in $$props) $$invalidate(15, topThreshold = $$props.topThreshold);
 		if ("bottomThreshold" in $$props) $$invalidate(16, bottomThreshold = $$props.bottomThreshold);
-		if ("$$scope" in $$props) $$invalidate(30, $$scope = $$props.$$scope);
+		if ("$$scope" in $$props) $$invalidate(29, $$scope = $$props.$$scope);
 	};
 
 	$$self.$$.update = () => {
@@ -1839,10 +1844,7 @@ function instance$7($$self, $$props, $$invalidate) {
 		}
 
 		if ($$self.$$.dirty[0] & /*keeps*/ 1024) {
-			{
-				virtual.updateParam("keeps", keeps);
-				virtual.handleSlotSizeChange();
-			}
+			handleKeepsChange(keeps);
 		}
 
 		if ($$self.$$.dirty[0] & /*data*/ 4) {
@@ -1878,7 +1880,6 @@ function instance$7($$self, $$props, $$invalidate) {
 		scrollToIndex,
 		scrollToBottom,
 		slots,
-		resize_handler,
 		div1_binding,
 		div2_binding,
 		$$scope
