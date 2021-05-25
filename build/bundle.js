@@ -1096,6 +1096,7 @@ function instance$8($$self, $$props, $$invalidate) {
 	let { type = "item" } = $$props;
 	let resizeObserver;
 	let itemDiv;
+	let previousSize;
 	const dispatch = createEventDispatcher();
 	const shapeKey = horizontal ? "offsetWidth" : "offsetHeight";
 
@@ -1116,11 +1117,10 @@ function instance$8($$self, $$props, $$invalidate) {
 	});
 
 	function dispatchSizeChange() {
-		dispatch("resize", {
-			id: uniqueKey,
-			size: itemDiv ? itemDiv[shapeKey] : 0,
-			type
-		});
+		const size = itemDiv ? itemDiv[shapeKey] : 0;
+		if (size === previousSize) return;
+		previousSize = size;
+		dispatch("resize", { id: uniqueKey, size, type });
 	}
 
 	function div_binding($$value) {
@@ -1162,7 +1162,7 @@ const get_default_slot_context = ctx => ({ data: /*data*/ ctx[2] });
 const get_header_slot_changes = dirty => ({ data: dirty[0] & /*displayItems*/ 8 });
 const get_header_slot_context = ctx => ({ data: /*data*/ ctx[2] });
 
-// (199:4) {#if $$slots.header}
+// (265:4) {#if $$slots.header}
 function create_if_block_1(ctx) {
 	let item;
 	let current;
@@ -1210,7 +1210,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (200:8) <Item on:resize={onItemResized} type="slot" uniqueKey="header">
+// (266:8) <Item on:resize={onItemResized} type="slot" uniqueKey="header">
 function create_default_slot_2(ctx) {
 	let current;
 	const header_slot_template = /*#slots*/ ctx[26].header;
@@ -1249,7 +1249,7 @@ function create_default_slot_2(ctx) {
 	};
 }
 
-// (206:12) <Item                     on:resize={onItemResized}                     uniqueKey={data[key]}                     horizontal={isHorizontal}                     type="item">
+// (272:12) <Item                     on:resize={onItemResized}                     uniqueKey={data[key]}                     horizontal={isHorizontal}                     type="item">
 function create_default_slot_1(ctx) {
 	let t;
 	let current;
@@ -1292,7 +1292,7 @@ function create_default_slot_1(ctx) {
 	};
 }
 
-// (205:8) {#each displayItems as data (data[key])}
+// (271:8) {#each displayItems as data (data[key])}
 function create_each_block$3(key_2, ctx) {
 	let first;
 	let item;
@@ -1351,7 +1351,7 @@ function create_each_block$3(key_2, ctx) {
 	};
 }
 
-// (215:4) {#if $$slots.footer}
+// (281:4) {#if $$slots.footer}
 function create_if_block(ctx) {
 	let item;
 	let current;
@@ -1399,7 +1399,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (216:8) <Item on:resize={onItemResized} type="slot" uniqueKey="footer">
+// (282:8) <Item on:resize={onItemResized} type="slot" uniqueKey="footer">
 function create_default_slot$5(ctx) {
 	let current;
 	const footer_slot_template = /*#slots*/ ctx[26].footer;
@@ -3176,8 +3176,6 @@ function create_fragment$2(ctx) {
 	let t3;
 	let div1;
 	let virtualscroll;
-	let t4;
-	let div2;
 	let current;
 	let mounted;
 	let dispose;
@@ -3220,9 +3218,6 @@ function create_fragment$2(ctx) {
 			t3 = space();
 			div1 = element("div");
 			create_component(virtualscroll.$$.fragment);
-			t4 = space();
-			div2 = element("div");
-			div2.textContent = "end";
 			attr(div0, "class", "overflow-buttons svelte-vwjlm9");
 			attr(div1, "class", "vs");
 		},
@@ -3234,8 +3229,6 @@ function create_fragment$2(ctx) {
 			insert(target, t3, anchor);
 			insert(target, div1, anchor);
 			mount_component(virtualscroll, div1, null);
-			insert(target, t4, anchor);
-			insert(target, div2, anchor);
 			current = true;
 
 			if (!mounted) {
@@ -3275,8 +3268,6 @@ function create_fragment$2(ctx) {
 			if (detaching) detach(div1);
 			/*virtualscroll_binding*/ ctx[3](null);
 			destroy_component(virtualscroll);
-			if (detaching) detach(t4);
-			if (detaching) detach(div2);
 			mounted = false;
 			run_all(dispose);
 		}
