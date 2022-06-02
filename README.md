@@ -1,3 +1,10 @@
+# Disclaimer
+
+This package is a fork from [v1ack/svelte-virtual-scroll-list](https://github.com/v1ack/svelte-virtual-scroll-list) v1.0.8, which merged the following pull requests:
+
+* [#2](https://github.com/v1ack/svelte-virtual-scroll-list/pull/2): fixes type error
+* [#3](https://github.com/v1ack/svelte-virtual-scroll-list/pull/3): fixes iOS scroll event
+
 # svelte-virtual-scroll-list
 
 [![npm](https://img.shields.io/npm/v/svelte-virtual-scroll-list?style=for-the-badge)](https://npmjs.com/package/svelte-virtual-scroll-list/)
