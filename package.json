@@ -1,5 +1,5 @@
 {
-  "name": "svelte-virtual-scroll-list",
+  "name": "@legnaleurc/svelte-virtual-scroll-list",
   "description": "Svelte lib for virtualizing lists",
   "author": {
     "name": "legnaleurc",
